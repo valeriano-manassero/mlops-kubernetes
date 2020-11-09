@@ -9,11 +9,10 @@ spec:
   chart:
     spec:
       sourceRef:
-        kind: HelmRepository
-        name: allegroai
+        kind: GitRepository
+        name: github
         namespace: flux-system
-      chart: trains-server-chart
-      version: "0.16.1+1"
+      chart: chart: ./charts/trains
   interval: 5m
   values:
     trains:
