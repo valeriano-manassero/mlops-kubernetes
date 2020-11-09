@@ -4,23 +4,23 @@ kind: HelmRelease
 metadata:
   name: minio
   namespace: minio
-  annotations:
-    fluxcd.io/automated: "false"
 spec:
   releaseName: minio
   chart:
-    repository: https://helm.min.io/
-    name: minio
-    version: 8.0.0
+    spec:
+      sourceRef:
+        kind: HelmRepository
+        name: minio
+        namespace: flux-system
+      chart: minio
+      version: "8.0.0"
   values:
     mode: standalone
-
     persistence:
       enabled: true
       storageClass: local-path
       accessMode: ReadWriteOnce
       size: 300Gi
-
     buckets:
       - name: data
         policy: none
@@ -28,6 +28,5 @@ spec:
       - name: metastore
         policy: none
         purge: false
-
     accessKey: DEMOaccessKey
     secretKey: DEMOsecretKey

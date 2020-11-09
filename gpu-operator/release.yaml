@@ -4,11 +4,13 @@ kind: HelmRelease
 metadata:
   name: gpu-operator
   namespace: gpu-operator
-  annotations:
-    fluxcd.io/automated: "false"
 spec:
   releaseName: gpu-operator
   chart:
-    repository: https://nvidia.github.io/gpu-operator
-    name: gpu-operator
-    version: 1.2.0
+    spec:
+      sourceRef:
+        kind: HelmRepository
+        name: nvidia
+        namespace: flux-system
+      chart: gpu-operator
+      version: "1.2.0"
