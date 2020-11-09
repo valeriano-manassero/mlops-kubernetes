@@ -12,7 +12,7 @@ spec:
         kind: GitRepository
         name: github
         namespace: flux-system
-      chart: chart: ./charts/trains
+      chart: /trains-server-chart
   interval: 5m
   values:
     trains:
