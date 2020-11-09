@@ -4,20 +4,19 @@ kind: HelmRelease
 metadata:
   name: trains
   namespace: trains
-  annotations:
-    fluxcd.io/automated: "false"
 spec:
   releaseName: trains
   chart:
-    repository: https://allegroai.github.io/trains-server-helm
-    name: trains-server-chart
-    version: 0.16.1+1
+    spec:
+      sourceRef:
+        kind: HelmRepository
+        name: allegroai
+        namespace: flux-system
+      chart: trains-server-chart
+      version: "0.16.1+1"
   values:
     trains:
       nodeSelector: "app: trains"
-      image:
-        repository: allegroai/trains-server
-        tag: 0.16.1-320
     agent:
       agentVersion: "==0.16.2rc0"
       numberOfTrainsAgents: 1

@@ -4,19 +4,17 @@ kind: HelmRelease
 metadata:
   name: presto
   namespace: presto
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: glob:0.*
 spec:
   releaseName: presto
   chart:
-    repository: https://valeriano-manassero.github.io/helm-charts
-    name: presto
-    version: 1.1.1
+    spec:
+      sourceRef:
+        kind: HelmRepository
+        name: valeriano-manassero
+        namespace: flux-system
+      chart: presto
+      version: "1.1.1"
   values:
-    image:
-      repository: prestosql/presto
-      tag: '344'
     server:
       workers: 1
     connectors:
