@@ -1,0 +1,30 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: trains
+  namespace: trains
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: trains
+  chart:
+    repository: https://allegroai.github.io/trains-server-helm
+    name: trains-server-chart
+    version: 0.16.1+1
+  values:
+    trains:
+      nodeSelector: "app: trains"
+      image:
+        repository: allegroai/trains-server
+        tag: 0.16.1-320
+    agent:
+      agentVersion: "==0.16.2rc0"
+      numberOfTrainsAgents: 1
+      nvidiaGpusPerAgent: 1
+      defaultBaseDocker: "nvidia/cuda"
+      trainsApiHost: "http://trains.namecheapcloud.net:30008"
+      trainsWebHost: "http://trains.namecheapcloud.net:30080"
+      trainsFilesHost: "http://trains.namecheapcloud.net:30081"
+      trainsAccessKey: "HDUSYJ0T2V6W9GX4ZESL"
+      trainsSecretKey: "e!@ys(DMZhZ!6RzV+ERAXKnOY8xT!Z2hb%-=w3c-SgA1=O%6ej"
