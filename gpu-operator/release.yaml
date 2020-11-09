@@ -1,0 +1,14 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: gpu-operator
+  namespace: gpu-operator
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: gpu-operator
+  chart:
+    repository: https://nvidia.github.io/gpu-operator
+    name: gpu-operator
+    version: 1.2.0
