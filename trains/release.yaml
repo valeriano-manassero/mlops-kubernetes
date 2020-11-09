@@ -14,6 +14,7 @@ spec:
         namespace: flux-system
       chart: trains-server-chart
       version: "0.16.1+1"
+  interval: 5m
   values:
     trains:
       nodeSelector: "app: trains"
