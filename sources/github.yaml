@@ -4,7 +4,7 @@ metadata:
   name: github
   namespace: flux-system
 spec:
-  interval: 1m
+  interval: 10m
   url: https://github.com/valeriano-manassero/trains-server-k8s
   ref:
     branch: cluster-test

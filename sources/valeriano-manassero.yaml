@@ -4,5 +4,5 @@ metadata:
   name: valeriano-manassero
   namespace: flux-system
 spec:
-  interval: 30m
+  interval: 10m
   url: https://valeriano-manassero.github.io/helm-charts

@@ -5,16 +5,16 @@ metadata:
   name: minio
   namespace: minio
 spec:
-  releaseName: minio
+  interval: 5m
   chart:
     spec:
+      chart: minio
       sourceRef:
         kind: HelmRepository
         name: minio
         namespace: flux-system
-      chart: minio
       version: "8.0.0"
-  interval: 5m
+      interval: 1m
   values:
     mode: standalone
     persistence:

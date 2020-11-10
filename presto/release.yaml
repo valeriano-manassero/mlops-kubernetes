@@ -5,16 +5,16 @@ metadata:
   name: presto
   namespace: presto
 spec:
-  releaseName: presto
+  interval: 5m
   chart:
     spec:
+      chart: presto
       sourceRef:
         kind: HelmRepository
         name: valeriano-manassero
         namespace: flux-system
-      chart: presto
       version: "1.1.1"
-  interval: 5m
+      interval: 1m
   values:
     server:
       workers: 1
