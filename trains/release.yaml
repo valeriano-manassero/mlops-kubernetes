@@ -19,7 +19,7 @@ spec:
       nodeSelector: "app: trains"
     agent:
       agentVersion: "==0.16.2rc0"
-      dockerMode: false
+      dockerMode: true
       numberOfTrainsAgents: 1
       nvidiaGpusPerAgent: 1
       defaultBaseDocker: "nvidia/cuda"
