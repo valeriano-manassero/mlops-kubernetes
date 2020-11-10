@@ -6,13 +6,15 @@ metadata:
   name: trains
   namespace: trains
 spec:
-  releaseName: trains
-  chart: ./trains-server-chart
-  sourceRef:
-    kind: GitRepository
-    name: github
-    namespace: flux-system
-  interval: 1m
+  chart:
+    spec:
+      releaseName: trains
+      chart: ./trains-server-chart
+      sourceRef:
+        kind: GitRepository
+        name: github
+        namespace: flux-system
+      interval: 1m
   values:
     trains:
       nodeSelector: "app: trains"
