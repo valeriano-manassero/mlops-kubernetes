@@ -2,6 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
   name: valeriano-manassero
+  namespace: flux-system
 spec:
   interval: 10m
   url: https://valeriano-manassero.github.io/helm-charts
