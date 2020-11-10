@@ -1,4 +1,5 @@
 ---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -6,13 +7,11 @@ metadata:
   namespace: trains
 spec:
   releaseName: trains
-  chart:
-    spec:
-      sourceRef:
-        kind: GitRepository
-        name: github
-        namespace: flux-system
-      chart: /trains-server-chart
+  chart: ./trains-server-chart
+  sourceRef:
+    kind: GitRepository
+    name: github
+    namespace: flux-system
   interval: 5m
   values:
     trains:

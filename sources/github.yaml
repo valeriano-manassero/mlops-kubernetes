@@ -5,3 +5,5 @@ metadata:
 spec:
   interval: 1m
   url: https://github.com/valeriano-manassero/trains-server-k8s
+  ref:
+    branch: cluster-test
