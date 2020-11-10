@@ -6,9 +6,9 @@ metadata:
   name: trains
   namespace: trains
 spec:
+  interval: 5m
   chart:
     spec:
-      releaseName: trains
       chart: ./trains-server-chart
       sourceRef:
         kind: GitRepository

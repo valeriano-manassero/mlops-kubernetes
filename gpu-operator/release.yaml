@@ -5,13 +5,13 @@ metadata:
   name: gpu-operator
   namespace: gpu-operator
 spec:
-  releaseName: gpu-operator
+  interval: 5m
   chart:
     spec:
+      chart: gpu-operator
       sourceRef:
         kind: HelmRepository
-        name: nvidia
+        name: gpu-operator
         namespace: flux-system
-      chart: gpu-operator
       version: "1.2.0"
-  interval: 1m
+      interval: 1m
