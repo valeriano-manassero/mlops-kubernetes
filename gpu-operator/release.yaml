@@ -14,4 +14,4 @@ spec:
         namespace: flux-system
       chart: gpu-operator
       version: "1.2.0"
-  interval: 5m
+  interval: 1m

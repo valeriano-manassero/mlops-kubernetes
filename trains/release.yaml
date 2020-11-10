@@ -12,7 +12,7 @@ spec:
     kind: GitRepository
     name: github
     namespace: flux-system
-  interval: 5m
+  interval: 1m
   values:
     trains:
       nodeSelector: "app: trains"
