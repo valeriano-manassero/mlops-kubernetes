@@ -5,6 +5,7 @@ metadata:
   namespace: trains
 spec:
   interval: 5m
+  releaseName: trains
   chart:
     spec:
       chart: ./trains-server-chart

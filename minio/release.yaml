@@ -5,6 +5,7 @@ metadata:
   namespace: minio
 spec:
   interval: 5m
+  releaseName: minio
   chart:
     spec:
       chart: minio

@@ -5,6 +5,7 @@ metadata:
   namespace: presto
 spec:
   interval: 5m
+  releaseName: presto
   chart:
     spec:
       chart: presto
