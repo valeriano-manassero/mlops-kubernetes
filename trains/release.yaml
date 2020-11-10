@@ -10,7 +10,7 @@ spec:
       chart: ./trains-server-chart
       sourceRef:
         kind: GitRepository
-        name: github
+        name: valeriano-manassero-trains
         namespace: flux-system
       interval: 1m
   values:

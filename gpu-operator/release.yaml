@@ -10,7 +10,7 @@ spec:
       chart: gpu-operator
       sourceRef:
         kind: HelmRepository
-        name: gpu-operator
+        name: nvidia-gpu-operator
         namespace: flux-system
       version: "1.2.0"
       interval: 1m
