@@ -18,7 +18,8 @@ spec:
     trains:
       nodeSelector: "app: trains"
     agent:
-      agentVersion: "==0.16.2rc0"
+      agentVersion: "0.16.2rc0"
+      agentVersionComparisonOperator: "=="
       dockerMode: false
       numberOfTrainsAgents: 1
       nvidiaGpusPerAgent: 1
