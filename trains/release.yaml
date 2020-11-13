@@ -20,6 +20,7 @@ spec:
     agent:
       agentVersion: "0.16.2rc0"
       agentVersionComparisonOperator: "=="
+      queues: "important_jobs default"
       dockerMode: false
       numberOfTrainsAgents: 1
       nvidiaGpusPerAgent: 1
