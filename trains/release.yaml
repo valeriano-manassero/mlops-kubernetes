@@ -32,8 +32,8 @@ spec:
   - kind: Secret
     name: trains-configs
     valuesKey: trainsAccessKey
-    targetPath: trainsAccessKey
+    targetPath: agent.trainsAccessKey
   - kind: Secret
     name: trains-configs
     valuesKey: trainsSecretKey
-    targetPath: trainsSecretKey
+    targetPath: agent.trainsSecretKey
