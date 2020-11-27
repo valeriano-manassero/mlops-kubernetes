@@ -31,4 +31,9 @@ spec:
   valuesFrom:
   - kind: Secret
     name: trains-configs
-    valuesKey: values.yaml
+    valuesKey: trainsAccessKey
+    targetPath: trainsAccessKey
+  - kind: Secret
+    name: trains-configs
+    valuesKey: trainsSecretKey
+    targetPath: trainsSecretKey
