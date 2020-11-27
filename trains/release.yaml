@@ -29,8 +29,6 @@ spec:
       trainsWebHost: "http://trains.namecheapcloud.net:30080"
       trainsFilesHost: "http://trains.namecheapcloud.net:30081"
   valuesFrom:
-  - secretKeyRef:
-      name: trains-configs
-      namespace: flux-system
-      key: values.yaml
-      optional: false
+  - kind: Secret
+    name: trains-configs
+    valuesKey: values.yaml
