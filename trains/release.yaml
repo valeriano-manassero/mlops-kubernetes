@@ -31,6 +31,6 @@ spec:
   valuesFrom:
   - secretKeyRef:
       name: trains-configs
-      namespace: sealed-secrets
+      namespace: flux-system
       key: values.yaml
       optional: false
