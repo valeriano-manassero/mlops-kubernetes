@@ -1,0 +1,14 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: trains-configs
+  namespace: flux-system
+spec:
+  encryptedData:
+    values.yaml: AgBPo7BUyASFXdplD4y8WnwtV7eAExLc7WjV8Kssu1D4l5B6WBAIA9QrYZy9y/dT+ei33fj8w/q4StIxgYSw4qn7cqAR9oMYaS9eGsuTuRz+ta4Zb7ms8JFG04XFz5maiEbft4HORdEV2jmI7qKpLVIdnnLHfjAHYAm/M2MokTHjQ6zEm/YuDYR1dlBoAf3qtua1aNY7BsFkZpY7CKJbPYCC8zV/pW32u5Eu90hRe0hQTdtWKaBUqsciRg5LUGXUNV1R86GpxH9vJBinoqiT4CkcyjLpAZJ69Mbo7H5vzFPFU/1dhVuf/2+pMR+1EvYW4grFzqD9ONRrQC0UQ9GnNr7frcJNPBxapeRE0wnNhVLTshEikTmvkNOVXG8bv6UefTKzikmt+dYdXPlOryqApZGKE32A4VkYxGLJ1gyGC10MrWUAH08yfSkm5Ex6zdE1OgpL+5pn/91U8BMq1Nmr9lC7VGWZ8T+KVWZPE8HmTBpzlAO3dRj6ZMo+iGX0PfQDKXWBrGcdxDcuodAMmcq3/UxPsrH6IvxwGiJ/xhZaTH6o9li3Gv7NF+Zth+cjId9kiz5NqQ4n05IOR2V9H3im1d8xh+QUKqs/bSDMaX2nDfnI4K1/B+eL9QFY6PgZchxACKM+hfSZCd5MGbuZlPUZublsRTIKgJv1lDFzGq6icpI4WMxADZiaIYIyDn1PTf3IwYQWtN/SooMbnTIoNpR1if5on/z9jx8rcQ49LhwoBysV4ibCU34CUxl2yJSIzU2XYLUtHJTL3HjTEN4cpCVUVCss4Wg5K0FtoVOkQVJhYPMdP5H3yrRVne/FBJJXUDj2FtuS39aqVBfrypQnsDowlvo=
+  template:
+    metadata:
+      creationTimestamp: null
+      name: trains-configs
+      namespace: flux-system
