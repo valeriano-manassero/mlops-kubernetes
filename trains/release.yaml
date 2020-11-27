@@ -28,5 +28,9 @@ spec:
       trainsApiHost: "http://trains.namecheapcloud.net:30008"
       trainsWebHost: "http://trains.namecheapcloud.net:30080"
       trainsFilesHost: "http://trains.namecheapcloud.net:30081"
-      trainsAccessKey: "HDUSYJ0T2V6W9GX4ZESL"
-      trainsSecretKey: "e!@ys(DMZhZ!6RzV+ERAXKnOY8xT!Z2hb%-=w3c-SgA1=O%6ej"
+  valuesFrom:
+  - secretKeyRef:
+      name: trains-configs
+      namespace: sealed-secrets
+      key: values.yaml
+      optional: false
