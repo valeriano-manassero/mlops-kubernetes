@@ -18,8 +18,6 @@ spec:
     trains:
       nodeSelector: "app: trains"
     agent:
-      agentVersion: "0.16.2rc0"
-      agentVersionComparisonOperator: "=="
       queues: "default"
       dockerMode: false
       numberOfTrainsAgents: 1
