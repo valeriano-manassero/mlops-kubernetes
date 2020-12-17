@@ -17,6 +17,11 @@ variable "repository_visibility" {
   default = "public"
 }
 
+variable "flux_version" {
+  type    = string
+  default = "v0.5.6"
+}
+
 variable "branch" {
   type    = string
   default = "main"
