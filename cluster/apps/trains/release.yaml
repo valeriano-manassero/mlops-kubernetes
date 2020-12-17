@@ -23,15 +23,6 @@ spec:
       numberOfTrainsAgents: 1
       nvidiaGpusPerAgent: 1
       defaultBaseDocker: "nvidia/cuda"
-      trainsApiHost: "http://trains.namecheapcloud.net:30008"
-      trainsWebHost: "http://trains.namecheapcloud.net:30080"
-      trainsFilesHost: "http://trains.namecheapcloud.net:30081"
-  valuesFrom:
-  - kind: Secret
-    name: trains-configs
-    valuesKey: trainsAccessKey
-    targetPath: agent.trainsAccessKey
-  - kind: Secret
-    name: trains-configs
-    valuesKey: trainsSecretKey
-    targetPath: agent.trainsSecretKey
+      trainsApiHost: "http://apiserver-service:8008"
+      trainsWebHost: "http://webserver-service"
+      trainsFilesHost: "http://fileserver-service:8081"
