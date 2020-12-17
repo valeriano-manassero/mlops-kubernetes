@@ -69,6 +69,13 @@ resource "github_repository" "main" {
   name           = var.repository_name
 }
 
+resource "github_repository_deploy_key" "main" {
+  title      = "cluster-management"
+  repository = github_repository.main.name
+  key        = tls_private_key.main.public_key_openssh
+  read_only  = true
+}
+
 resource "github_repository_file" "install" {
   repository = github_repository.main.name
   file       = data.flux_install.main.path
