@@ -7,4 +7,4 @@ spec:
   interval: 10m
   url: https://github.com/valeriano-manassero/trains-server-k8s
   ref:
-    semver: ">=0.0.0 <1"
+    semver: ">=0.0.0-rc.1 <1"
