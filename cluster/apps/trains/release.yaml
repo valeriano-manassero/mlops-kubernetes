@@ -26,3 +26,5 @@ spec:
       trainsApiHost: "http://apiserver-service:8008"
       trainsWebHost: "http://webserver-service"
       trainsFilesHost: "http://fileserver-service:8081"
+      awsAccessKeyId: DEMOaccessKey
+      awsSecretAccessKey: DEMOsecretKey
