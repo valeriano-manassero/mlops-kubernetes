@@ -28,3 +28,30 @@ spec:
       trainsFilesHost: "http://fileserver-service:8081"
       awsAccessKeyId: DEMOaccessKey
       awsSecretAccessKey: DEMOsecretKey
+      trainsConfig: |-
+        sdk {
+            aws {
+                s3 {
+                    key: ""
+                    secret: ""
+                    region: ""
+                    credentials: [
+                        {
+                            host: "minio.minio:9000"
+                            key: "DEMOaccessKey"
+                            secret: "DEMOsecretKey"
+                            multipart: false
+                            secure: false
+                            region: ""
+                        }
+                    ]
+                }
+                boto3 {
+                    pool_connections: 512
+                    max_multipart_concurrency: 16
+                }
+            }
+            development {
+                default_output_uri: "s3://minio.minio:9000/trains/"
+            }
+        }
