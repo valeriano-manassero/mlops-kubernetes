@@ -29,5 +29,8 @@ spec:
       - name: metastore
         policy: none
         purge: false
+      - name: trains
+        policy: none
+        purge: false
     accessKey: DEMOaccessKey
     secretKey: DEMOsecretKey
