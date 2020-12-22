@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: valeriano-manassero
         namespace: flux-system
-      version: "1.1.1"
+      version: "1.2.5"
       interval: 1m
   values:
     server:
