@@ -23,8 +23,9 @@ spec:
         dockerMode: false
         numberOfTrainsAgents: 1
         nvidiaGpusPerAgent: 1
-        trainsAccessKey: "48ZXTFTH6M9ZHE5DPYP0"
-        trainsSecretKey: "u6twD6+pv4TWu@69x=Pn_WWLvz%fYLTA-Vs&-1+iMAZf7W@oFA"
+        trainsApiHost: "http://apiserver-service:8008"
+        trainsWebHost: "http://webserver-service"
+        trainsFilesHost: "http://fileserver-service:8081"
         trainsConfig: |-
           sdk {
               aws {
