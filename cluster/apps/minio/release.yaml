@@ -21,7 +21,7 @@ spec:
       enabled: true
       storageClass: local-path
       accessMode: ReadWriteOnce
-      size: 300Gi
+      size: 550Gi
     buckets:
       - name: data
         policy: none
