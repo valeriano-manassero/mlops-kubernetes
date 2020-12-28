@@ -54,5 +54,3 @@ spec:
                   default_output_uri: "s3://minio.minio:9000/trains/"
               }
           }
-    agentservices:
-      agentVersion: ">=0.16.4"
