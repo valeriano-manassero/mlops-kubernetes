@@ -21,6 +21,7 @@ spec:
       - name: agent-group0
         queues: "default"
         dockerMode: false
+        agentVersion: ">=0.16.4"
         numberOfTrainsAgents: 1
         nvidiaGpusPerAgent: 1
         trainsApiHost: "http://apiserver-service:8008"
@@ -53,3 +54,5 @@ spec:
                   default_output_uri: "s3://minio.minio:9000/trains/"
               }
           }
+    agentservices:
+      agentVersion: ">=0.16.4"
