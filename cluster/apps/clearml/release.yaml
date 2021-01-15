@@ -19,25 +19,25 @@ spec:
     apiserver:
       storage:
         logs:
-          class: ""
+          class: "local-path"
           size: 10Gi
         config:
-          class: ""
+          class: "local-path"
           size: 1Gi
 
     fileserver:
       storage:
         data:
-          class: ""
+          class: "local-path"
           size: 50Gi
         logs:
-          class: ""
+          class: "local-path"
           size: 5Gi
 
     agentservices:
       storage:
         data:
-          class: ""
+          class: "local-path"
           size: 50Gi
 
     agentGroups:
@@ -79,7 +79,7 @@ spec:
 
         storage:
           data:
-            class: ""
+            class: "local-path"
             size: 50Gi
 
         image:
@@ -125,7 +125,7 @@ spec:
 
         storage:
           data:
-            class: ""
+            class: "local-path"
             size: 50Gi
 
         image:
