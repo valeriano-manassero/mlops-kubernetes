@@ -16,6 +16,30 @@ spec:
       version: "0.1.1"
       interval: 1m
   values:
+    apiserver:
+      storage:
+        logs:
+          class: ""
+          size: 10Gi
+        config:
+          class: ""
+          size: 1Gi
+
+    fileserver:
+      storage:
+        data:
+          class: ""
+          size: 50Gi
+        logs:
+          class: ""
+          size: 5Gi
+
+    agentservices:
+      storage:
+        data:
+          class: ""
+          size: 50Gi
+
     agentGroups:
       - name: agent-group0
         queues: "default"
@@ -55,7 +79,7 @@ spec:
 
         storage:
           data:
-            class: "standard"
+            class: ""
             size: 50Gi
 
         image:
@@ -101,7 +125,7 @@ spec:
 
         storage:
           data:
-            class: "standard"
+            class: ""
             size: 50Gi
 
         image:
