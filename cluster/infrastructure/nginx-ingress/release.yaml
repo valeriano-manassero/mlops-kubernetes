@@ -19,3 +19,7 @@ spec:
     controller:
       service:
         type: NodePort
+        httpPort:
+          nodePort: "80"
+        httpsPort:
+          nodePort: "443"
