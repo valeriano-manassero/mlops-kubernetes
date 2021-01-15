@@ -1,33 +1,31 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: trains
-  namespace: trains
+  name: clearml
+  namespace: clearml
 spec:
   interval: 5m
-  releaseName: trains
+  releaseName: clearml
   chart:
     spec:
-      chart: ./trains-server-chart
+      chart: clearml
       sourceRef:
-        kind: GitRepository
-        name: valeriano-manassero-trains
+        kind: HelmRepository
+        name: valeriano-manassero
         namespace: flux-system
+      version: "0.1.1"
       interval: 1m
   values:
-    trains:
-      nodeSelector: "app: trains"
     agentGroups:
       - name: agent-group0
         queues: "default"
-        dockerMode: false
-        agentVersion: ">=0.16.4"
-        numberOfTrainsAgents: 4
+        agentVersion: ""
+        replicaCount: 4
         nvidiaGpusPerAgent: 0
-        trainsApiHost: "http://apiserver-service:8008"
-        trainsWebHost: "http://webserver-service"
-        trainsFilesHost: "http://fileserver-service:8081"
-        trainsConfig: |-
+        clearmlApiHost: "http://clearml-apiserver:8008"
+        clearmlWebHost: "http://clearml-webserver"
+        clearmlFilesHost: "http://clearml-fileserver:8081"
+        clearmlConfig: |-
           sdk {
               aws {
                   s3 {
@@ -51,19 +49,29 @@ spec:
                   }
               }
               development {
-                  default_output_uri: "s3://minio.minio:9000/trains/"
+                  default_output_uri: "s3://minio.minio:9000/clearml/"
               }
           }
+
+        storage:
+          data:
+            class: "standard"
+            size: 50Gi
+
+        image:
+          repository: "nvidia/cuda"
+          pullPolicy: IfNotPresent
+          tag: "11.2.0-runtime"
+
       - name: agent-group1
         queues: "gpu"
-        dockerMode: false
-        agentVersion: ">=0.16.4"
-        numberOfTrainsAgents: 1
+        agentVersion: ""
+        replicaCount: 1
         nvidiaGpusPerAgent: 1
-        trainsApiHost: "http://apiserver-service:8008"
-        trainsWebHost: "http://webserver-service"
-        trainsFilesHost: "http://fileserver-service:8081"
-        trainsConfig: |-
+        clearmlApiHost: "http://clearml-apiserver:8008"
+        clearmlWebHost: "http://clearml-webserver"
+        clearmlFilesHost: "http://clearml-fileserver:8081"
+        clearmlConfig: |-
           sdk {
               aws {
                   s3 {
@@ -87,6 +95,16 @@ spec:
                   }
               }
               development {
-                  default_output_uri: "s3://minio.minio:9000/trains/"
+                  default_output_uri: "s3://minio.minio:9000/clearml/"
               }
           }
+
+        storage:
+          data:
+            class: "standard"
+            size: 50Gi
+
+        image:
+          repository: "nvidia/cuda"
+          pullPolicy: IfNotPresent
+          tag: "11.2.0-runtime"
