@@ -20,6 +20,6 @@ spec:
       service:
         type: NodePort
         httpPort:
-          nodePort: "80"
+          nodePort: "30080"
         httpsPort:
-          nodePort: "443"
+          nodePort: "30443"
