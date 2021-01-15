@@ -29,7 +29,7 @@ spec:
       - name: metastore
         policy: none
         purge: false
-      - name: trains
+      - name: clearml
         policy: none
         purge: false
     accessKey: DEMOaccessKey
