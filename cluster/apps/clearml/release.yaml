@@ -17,6 +17,9 @@ spec:
       interval: 1m
   values:
     apiserver:
+      service:
+        type: NodePort
+        port: 8008
       storage:
         logs:
           class: "local-path"
@@ -26,6 +29,9 @@ spec:
           size: 1Gi
 
     fileserver:
+      service:
+        type: NodePort
+        port: 8081
       storage:
         data:
           class: "local-path"
@@ -34,6 +40,11 @@ spec:
           class: "local-path"
           size: 5Gi
 
+    webserver:
+      service:
+        type: NodePort
+        port: 80
+    
     agentservices:
       storage:
         data:
