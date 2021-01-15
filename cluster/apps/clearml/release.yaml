@@ -16,10 +16,10 @@ spec:
       version: "0.1.3"
       interval: 1m
   values:
-  ingress:
-    enabled: true
-    name: clearml-server-ingress
-    host: "clearml.namecheapcloud.net"
+    ingress:
+      enabled: true
+      name: clearml-server-ingress
+      host: "clearml.namecheapcloud.net"
 
     apiserver:
       service:
