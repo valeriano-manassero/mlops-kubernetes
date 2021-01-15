@@ -21,7 +21,7 @@ Cluster should also have at least one node with an NVIDIA gpu.
 
 ## Runtime Components
 
-* Allegro ClearML (trains)
+* Allegro ClearML
 * TrinoDB
 * Minio
 * NVIDIA GPU Operator
