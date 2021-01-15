@@ -91,7 +91,7 @@ spec:
         image:
           repository: "nvidia/cuda"
           pullPolicy: IfNotPresent
-          tag: "11.2.0-runtime"
+          tag: "11.0-base-ubuntu18.04"
 
       - name: agent-group1
         queues: "gpu"
@@ -132,4 +132,4 @@ spec:
         image:
           repository: "nvidia/cuda"
           pullPolicy: IfNotPresent
-          tag: "11.2.0-runtime"
+          tag: "11.0-base-ubuntu18.04"
