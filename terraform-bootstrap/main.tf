@@ -6,6 +6,14 @@ resource "tls_private_key" "main" {
 data "flux_install" "main" {
   target_path = var.target_path
   version = var.flux_version
+  components = [
+    "source-controller",
+    "kustomize-controller",
+    "helm-controller",
+    "notification-controller",
+    "image-reflector-controller",
+    "image-automation-controller"
+  ]
 }
 
 data "flux_sync" "main" {
