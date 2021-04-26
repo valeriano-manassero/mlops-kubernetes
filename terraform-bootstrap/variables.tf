@@ -7,6 +7,11 @@ variable "github_token" {
   type = string
 }
 
+variable "kubernetes_config_path" {
+  type    = string
+  default = "~/.kube/config"
+}
+
 variable "repository_name" {
   type    = string
   default = "mlops-k8s-infra"

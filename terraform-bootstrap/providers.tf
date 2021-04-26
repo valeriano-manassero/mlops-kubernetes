@@ -1,23 +1,28 @@
 terraform {
-  required_version = ">= 0.13"
+  required_version = ">= 0.15"
 
   required_providers {
     github = {
-      source  = "hashicorp/github"
-      version = ">= 3.1.0"
+      source = "integrations/github"
+      version = ">= 4.5.2"
     }
     kubernetes = {
       source  = "hashicorp/kubernetes"
-      version = ">= 1.13.3"
+      version = ">= 2.1.0"
     }
     kubectl = {
       source  = "gavinbunney/kubectl"
-      version = ">= 1.9.1"
+      version = ">= 1.10.0"
     }
     flux = {
       source  = "fluxcd/flux"
-      version = ">= 0.0.1"
+      version = ">= 0.1.3"
     }
+    tls = {
+      source  = "hashicorp/tls"
+      version = "3.1.0"
+    }
+
   }
 }
 
@@ -25,7 +30,9 @@ provider "flux" {}
 
 provider "kubectl" {}
 
-provider "kubernetes" {}
+provider "kubernetes" {
+  config_path = var.kubernetes_config_path
+}
 
 provider "github" {
   owner = var.github_owner
