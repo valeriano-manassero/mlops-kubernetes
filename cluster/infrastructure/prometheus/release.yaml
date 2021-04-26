@@ -18,4 +18,9 @@ spec:
   values:
     kubeStateMetrics:
       enabled: false
-    storageClass: "local-path"
+    alertmanager:
+      persistentVolume:
+        storageClass: "local-path"
+    server:
+      persistentVolume:
+        storageClass: "local-path"
