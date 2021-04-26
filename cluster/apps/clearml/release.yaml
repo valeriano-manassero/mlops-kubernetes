@@ -129,3 +129,16 @@ spec:
           repository: "nvidia/cuda"
           pullPolicy: IfNotPresent
           tag: "11.0-base-ubuntu18.04"
+    
+    redis:
+      master:
+        persistence:
+          storageClass: "local-path"
+    
+    mongodb:
+      persistence:
+        storageClass: "local-path"
+    
+    elasticsearch:
+      volumeClaimTemplate:
+        storageClassName: "local-path"
