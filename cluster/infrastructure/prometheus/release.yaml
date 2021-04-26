@@ -13,5 +13,9 @@ spec:
         kind: HelmRepository
         name: prometheus-community
         namespace: flux-system
-      version: "13.0.1"
+      version: "13.8.0"
       interval: 1m
+  values:
+    kubeStateMetrics:
+      enabled: false
+    storageClass: "local-path"
