@@ -7,6 +7,7 @@ This repository contains the `state of MLOps Kubernetes cluster` managed with Gi
 ## Requirements
 
 A Kubernetes cluster `>=1.21` with complete access via `kubectl` is needed to start.
+Runtime should be 'containerd'.
 Cluster should also have at least one node with an NVIDIA gpu.
 
 ## Management Components
