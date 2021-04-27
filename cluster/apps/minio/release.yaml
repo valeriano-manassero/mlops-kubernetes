@@ -8,32 +8,51 @@ spec:
   releaseName: minio
   chart:
     spec:
-      chart: minio
+      chart: minio-operator
       sourceRef:
         kind: HelmRepository
         name: minio
         namespace: flux-system
-      version: "8.0.0"
+      version: "4.0.8"
       interval: 1m
   values:
-    mode: standalone
-    persistence:
-      enabled: true
-      storageClass: local-path
-      accessMode: ReadWriteOnce
-      size: 550Gi
-    buckets:
-      - name: data
-        policy: none
-        purge: false
-      - name: metastore
-        policy: none
-        purge: false
-      - name: clearml
-        policy: none
-        purge: false
-    accessKey: DEMOaccessKey
-    secretKey: DEMOsecretKey
-    metrics:
-      serviceMonitor:
-        enabled: true
+    tenants:
+      - name: minio
+        image:
+          repository: minio/minio
+          tag: RELEASE.2021-04-06T23-11-00Z
+        scheduler: {}
+        pools:
+          - servers: 1
+            volumesPerServer: 4
+            size: 100Gi
+            storageClassName: local-path
+        secrets:
+          name: minio-secret
+          accessKey: DEMOaccessKey
+          secretKey: DEMOsecretKey
+        metrics:
+          enabled: false
+          port: 9000
+        certificate:
+          externalCertSecret: {}
+          requestAutoCert: false
+          certConfig: {}
+        s3:
+          bucketDNS: false
+        podManagementPolicy: Parallel
+        serviceMetadata: {}
+        env: {}
+        priorityClassName : ""
+        console:
+          image:
+            repository: minio/console
+            tag: v0.6.8
+            pullPolicy: IfNotPresent
+          replicaCount: 1
+          secrets:
+            name: console-secret
+            passphrase: SECRETpassphrase
+            salt: SECRETsalt
+            accessKey: DEMOaccessKey
+            secretKey: DEMOsecretKey
