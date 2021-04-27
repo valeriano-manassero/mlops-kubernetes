@@ -43,7 +43,8 @@ spec:
         podManagementPolicy: Parallel
         serviceMetadata: {}
         env:
-        - MINIO_PROMETHEUS_AUTH_TYPE: public
+        - name: MINIO_PROMETHEUS_AUTH_TYPE
+          value: public
         priorityClassName : ""
         console:
           image:
