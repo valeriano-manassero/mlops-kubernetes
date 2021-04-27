@@ -1,0 +1,38 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: minio-operator
+  namespace: minio-operator
+spec:
+  interval: 5m
+  releaseName: minio-operator
+  chart:
+    spec:
+      chart: minio-operator
+      sourceRef:
+        kind: HelmRepository
+        name: minio-operator
+        namespace: flux-system
+      version: "4.0.8"
+      interval: 1m
+  values:
+    tenants:
+      - name: minio1
+        pools:
+          - servers: 1
+            volumesPerServer: 4
+            size: 100Gi
+            storageClassName: local-path
+        secrets:
+          name: minio1-secret
+          accessKey: DEMOaccessKey
+          secretKey: DEMOsecretKey
+        metrics:
+          enabled: false
+          port: 9000
+          secrets:
+            name: console-secret
+            passphrase: SECRETpassphrase
+            salt: SECRETsalt
+            accessKey: DEMOaccessKey
+            secretKey: DEMOsecretKey
