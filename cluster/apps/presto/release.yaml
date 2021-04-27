@@ -16,6 +16,9 @@ spec:
       version: "1.2.3"
       interval: 1m
   values:
+    image:
+      repository: talkdesk/prestosql
+      tag: 346
     server:
       workers: 1
     connectors:
