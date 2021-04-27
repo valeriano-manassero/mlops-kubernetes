@@ -42,7 +42,8 @@ spec:
           bucketDNS: false
         podManagementPolicy: Parallel
         serviceMetadata: {}
-        env: {}
+        env:
+          MINIO_PROMETHEUS_AUTH_TYPE: public
         priorityClassName : ""
         console:
           image:
