@@ -45,3 +45,9 @@ spec:
           externalCertSecret: {}
           requestAutoCert: false
           certConfig: {}
+         s3:
+           bucketDNS: false
+           podManagementPolicy: Parallel
+           serviceMetadata: {}
+           env: {}
+           priorityClassName : ""
