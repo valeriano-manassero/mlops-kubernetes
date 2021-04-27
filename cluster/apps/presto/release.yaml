@@ -17,7 +17,7 @@ spec:
       interval: 1m
   values:
     image:
-      repository: talkdesk/prestosql
+      repository: valerianomanassero/prestosql
       tag: 346
     server:
       workers: 1
