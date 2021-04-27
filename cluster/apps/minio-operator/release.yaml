@@ -18,6 +18,8 @@ spec:
   values:
     tenants:
       - name: minio1
+        scheduler:
+          name: ""
         pools:
           - servers: 1
             volumesPerServer: 4
