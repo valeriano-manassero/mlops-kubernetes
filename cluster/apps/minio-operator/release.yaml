@@ -21,8 +21,7 @@ spec:
         image:
           repository: minio/minio
           tag: RELEASE.2021-04-06T23-11-00Z
-        scheduler:
-          name: ""
+        scheduler: {}
         pools:
           - servers: 1
             volumesPerServer: 4
@@ -45,9 +44,9 @@ spec:
           externalCertSecret: {}
           requestAutoCert: false
           certConfig: {}
-         s3:
-           bucketDNS: false
-           podManagementPolicy: Parallel
-           serviceMetadata: {}
-           env: {}
-           priorityClassName : ""
+        s3:
+          bucketDNS: false
+          podManagementPolicy: Parallel
+          serviceMetadata: {}
+          env: {}
+          priorityClassName : ""
