@@ -23,7 +23,7 @@ spec:
         storageClassName: "local-path"
         size: 5Gi
     promtail:
-      enabled: false
+      enabled: true
     fluent-bit:
       enabled: false
     grafana:
