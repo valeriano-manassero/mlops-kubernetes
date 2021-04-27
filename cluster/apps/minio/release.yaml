@@ -34,3 +34,5 @@ spec:
         purge: false
     accessKey: DEMOaccessKey
     secretKey: DEMOsecretKey
+    metrics:
+      serviceMonitor: enabled
