@@ -34,19 +34,25 @@ spec:
         metrics:
           enabled: false
           port: 9000
-          secrets:
-            name: console-secret
-            passphrase: SECRETpassphrase
-            salt: SECRETsalt
-            accessKey: DEMOaccessKey
-            secretKey: DEMOsecretKey
         certificate:
           externalCertSecret: {}
           requestAutoCert: false
           certConfig: {}
         s3:
           bucketDNS: false
-          podManagementPolicy: Parallel
-          serviceMetadata: {}
-          env: {}
-          priorityClassName : ""
+        podManagementPolicy: Parallel
+        serviceMetadata: {}
+        env: {}
+        priorityClassName : ""
+        console:
+          image:
+            repository: minio/console
+            tag: v0.6.8
+            pullPolicy: IfNotPresent
+          replicaCount: 1
+          secrets:
+            name: console-secret
+            passphrase: SECRETpassphrase
+            salt: SECRETsalt
+            accessKey: DEMOaccessKey
+            secretKey: DEMOsecretKey
