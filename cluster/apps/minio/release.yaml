@@ -32,7 +32,7 @@ spec:
           accessKey: DEMOaccessKey
           secretKey: DEMOsecretKey
         metrics:
-          enabled: false
+          enabled: true
           port: 9000
         certificate:
           externalCertSecret: {}
