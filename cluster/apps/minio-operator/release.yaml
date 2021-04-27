@@ -41,3 +41,7 @@ spec:
             salt: SECRETsalt
             accessKey: DEMOaccessKey
             secretKey: DEMOsecretKey
+        certificate:
+          externalCertSecret: {}
+          requestAutoCert: false
+          certConfig: {}
