@@ -35,4 +35,5 @@ spec:
     accessKey: DEMOaccessKey
     secretKey: DEMOsecretKey
     metrics:
-      serviceMonitor: enabled
+      serviceMonitor:
+        enabled: true
