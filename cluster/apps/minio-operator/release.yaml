@@ -1,17 +1,17 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: minio-operator
+  name: minio
   namespace: minio-operator
 spec:
   interval: 5m
-  releaseName: minio-operator
+  releaseName: minio
   chart:
     spec:
       chart: minio-operator
       sourceRef:
         kind: HelmRepository
-        name: minio-operator
+        name: minio
         namespace: flux-system
       version: "4.0.8"
       interval: 1m
