@@ -1,0 +1,36 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: presto
+  namespace: presto
+spec:
+  interval: 5m
+  releaseName: presto
+  chart:
+    spec:
+      chart: presto
+      sourceRef:
+        kind: HelmRepository
+        name: valeriano-manassero
+        namespace: flux-system
+      version: "1.2.3"
+      interval: 1m
+  values:
+    server:
+      workers: 1
+    connectors:
+      hive.properties: |-
+        connector.name=hive-hadoop2
+        hive.metastore=file
+        hive.metastore.catalog.dir=s3://metastore/
+        hive.allow-drop-table=true
+        hive.s3.aws-access-key=DEMOaccessKey
+        hive.s3.aws-secret-key=DEMOsecretKey
+        hive.s3.endpoint=http://minio.minio:9000
+        hive.s3.path-style-access=true
+        hive.s3.ssl.enabled=false
+        hive.non-managed-table-writes-enabled=true
+        hive.non-managed-table-creates-enabled=true
+        hive.collect-column-statistics-on-write=true
+        hive.s3select-pushdown.enabled=true
+        hive.compression-codec=SNAPPY
