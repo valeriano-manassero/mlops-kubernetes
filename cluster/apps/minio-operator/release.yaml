@@ -18,8 +18,10 @@ spec:
   values:
     tenants:
       - name: minio1
-        scheduler:
-          name: ""
+        image:
+          repository: minio/minio
+          tag: RELEASE.2021-04-06T23-11-00Z
+        scheduler: null
         pools:
           - servers: 1
             volumesPerServer: 4
