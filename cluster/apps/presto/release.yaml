@@ -37,3 +37,4 @@ spec:
         hive.collect-column-statistics-on-write=true
         hive.s3select-pushdown.enabled=true
         hive.compression-codec=SNAPPY
+        hive.immutable-partitions=false
