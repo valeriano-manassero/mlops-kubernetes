@@ -8,12 +8,12 @@ spec:
   releaseName: clearml
   chart:
     spec:
-      chart: clearml
+      chart: clearml-server-cloud-ready
       sourceRef:
         kind: HelmRepository
-        name: valeriano-manassero
+        name: allegroai
         namespace: flux-system
-      version: "0.1.7"
+      version: "2.0.2+1"
       interval: 1m
   values:
     ingress:
