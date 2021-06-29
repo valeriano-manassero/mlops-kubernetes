@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: nvidia-gpu-operator
         namespace: flux-system
-      version: "1.6.2"
+      version: "1.7.0"
       interval: 1m
   values:
     operator:
