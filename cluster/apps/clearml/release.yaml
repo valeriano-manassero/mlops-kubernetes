@@ -142,3 +142,22 @@ spec:
     elasticsearch:
       volumeClaimTemplate:
         storageClassName: "local-path"
+      extraEnvs:
+        - name: bootstrap.memory_lock
+          value: "false"
+        - name: cluster.routing.allocation.node_initial_primaries_recoveries
+          value: "500"
+        - name: cluster.routing.allocation.disk.watermark.low
+          value: 500mb
+        - name: cluster.routing.allocation.disk.watermark.high
+          value: 500mb
+        - name: cluster.routing.allocation.disk.watermark.flood_stage
+          value: 500mb
+        - name: http.compression_level
+          value: "7"
+        - name: reindex.remote.whitelist
+          value: '*.*'
+        - name: xpack.monitoring.enabled
+          value: "false"
+        - name: xpack.security.enabled
+          value: "false"
