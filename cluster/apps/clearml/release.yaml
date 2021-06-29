@@ -8,12 +8,6 @@ spec:
   releaseName: clearml
   chart:
     spec:
-      install:
-        remediation:
-          retries: 3
-      upgrade:
-        remediation:
-          retries: 3
       chart: clearml-server-cloud-ready
       sourceRef:
         kind: HelmRepository
@@ -23,11 +17,7 @@ spec:
       interval: 1m
   values:
     ingress:
-      enabled: true
-      name: clearml-server-ingress
-      host: "clearml.namecheapcloud.net"
-      annotations:
-        kubernetes.io/ingress.class: "nginx"
+      enabled: false
 
     apiserver:
       storage:
