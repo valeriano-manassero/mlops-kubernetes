@@ -8,6 +8,12 @@ spec:
   releaseName: clearml
   chart:
     spec:
+      install:
+        remediation:
+          retries: 3
+      upgrade:
+        remediation:
+          retries: 3
       chart: clearml-server-cloud-ready
       sourceRef:
         kind: HelmRepository
