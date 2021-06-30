@@ -5,16 +5,15 @@ metadata:
   namespace: clearml
 spec:
   interval: 5m
-  timeout: 10m
   releaseName: clearml
   chart:
     spec:
-      chart: clearml-server-cloud-ready
+      chart: clearml
       sourceRef:
         kind: HelmRepository
-        name: allegroai
+        name: valeriano-manassero
         namespace: flux-system
-      version: "2.0.2+1"
+      version: "1.0.0"
       interval: 1m
   values:
     ingress:
