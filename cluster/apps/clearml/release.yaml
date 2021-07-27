@@ -11,9 +11,9 @@ spec:
       chart: clearml
       sourceRef:
         kind: HelmRepository
-        name: valeriano-manassero
+        name: allegroai
         namespace: flux-system
-      version: "1.0.0"
+      version: "2.0.x"
       interval: 1m
   values:
     ingress:
