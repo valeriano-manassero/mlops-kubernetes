@@ -83,7 +83,7 @@ spec:
         image:
           repository: "nvidia/cuda"
           pullPolicy: IfNotPresent
-          tag: "11.0-base-ubuntu18.04"
+          tag: "11.4.1-base-ubuntu20.04"
 
       - name: agent-group1
         queues: "gpu"
@@ -124,7 +124,7 @@ spec:
         image:
           repository: "nvidia/cuda"
           pullPolicy: IfNotPresent
-          tag: "11.0-base-ubuntu18.04"
+          tag: "11.4.1-base-ubuntu20.04"
     
     redis:
       master:
