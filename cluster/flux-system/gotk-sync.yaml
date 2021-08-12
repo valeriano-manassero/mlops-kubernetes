@@ -10,7 +10,7 @@ spec:
     branch: main
   secretRef:
     name: flux-system
-  url: ssh://git@github.com/valeriano-manassero/mlops-k8s-infra.git
+  url: ssh://git@github.com/valeriano-manassero/mlops-kubernetes.git
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization

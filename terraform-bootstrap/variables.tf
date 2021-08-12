@@ -14,7 +14,7 @@ variable "kubernetes_config_path" {
 
 variable "repository_name" {
   type    = string
-  default = "mlops-k8s-infra"
+  default = "mlops-kubernetes"
 }
 
 variable "repository_visibility" {
