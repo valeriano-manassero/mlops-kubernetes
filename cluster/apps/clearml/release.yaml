@@ -61,7 +61,7 @@ spec:
                       region: ""
                       credentials: [
                           {
-                              host: "minio.minio:9000"
+                              host: "minio-hl.minio:9000"
                               key: "DEMOaccessKey"
                               secret: "DEMOsecretKey"
                               multipart: false
@@ -76,7 +76,7 @@ spec:
                   }
               }
               development {
-                  default_output_uri: "s3://minio.minio:9000/clearml/"
+                  default_output_uri: "s3://minio-hl.minio:9000/clearml/"
               }
           }
 
