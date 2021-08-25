@@ -19,7 +19,7 @@ spec:
     ingress:
       enabled: true
       name: clearml-server-ingress
-      host: "clearml.valerianomanassero.local"
+      host: "clearml.10.25.30.9.nip.io"
       hostPrefixApp: "app-"
       hostPrefixApi: "api-"
       hostPrefixFiles: "files-"
