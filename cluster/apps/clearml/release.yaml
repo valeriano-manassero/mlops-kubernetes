@@ -23,8 +23,14 @@ spec:
       hostPrefixApp: "app-"
       hostPrefixApi: "api-"
       hostPrefixFiles: "files-"
-      
+    
+    webserver:
+      service:
+        type: ClusterIP
+    
     apiserver:
+      service:
+        type: ClusterIP
       storage:
         logs:
           class: "local-path"
@@ -34,6 +40,8 @@ spec:
           size: 1Gi
 
     fileserver:
+      service:
+        type: ClusterIP
       storage:
         data:
           class: "local-path"
