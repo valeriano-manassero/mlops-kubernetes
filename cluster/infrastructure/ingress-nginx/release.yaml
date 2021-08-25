@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ingress-nginx
+  namespace: ingress-nginx
+spec:
+  interval: 5m
+  releaseName: ingress-nginx
+  chart:
+    spec:
+      chart: ingress-nginx
+      sourceRef:
+        kind: HelmRepository
+        name: ingress-nginx
+        namespace: flux-system
+      version: "3.35.x"
+      interval: 1m
+  values:
+    controller:
+      replicaCount: 1
+      service:
+        type: NodePort
+        httpPort:
+          nodePort: "30080"
+        httpsPort:
+          nodePort: "30443"
+      setAsDefaultIngress: true
