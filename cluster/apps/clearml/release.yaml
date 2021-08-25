@@ -17,8 +17,13 @@ spec:
       interval: 1m
   values:
     ingress:
-      enabled: false
-
+      enabled: true
+      name: clearml-server-ingress
+      host: "clearml.valerianomanassero.local"
+      hostPrefixApp: "app-"
+      hostPrefixApi: "api-"
+      hostPrefixFiles: "files-"
+      
     apiserver:
       storage:
         logs:
