@@ -10,3 +10,4 @@ override.tf.json
 .terraformrc
 .terraform.lock*
 terraform.rc
+.DS_Store
