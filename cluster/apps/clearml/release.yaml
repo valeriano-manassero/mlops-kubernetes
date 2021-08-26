@@ -27,10 +27,12 @@ spec:
     webserver:
       service:
         type: ClusterIP
+        port: null
     
     apiserver:
       service:
         type: ClusterIP
+        port: null
       storage:
         logs:
           class: "local-path"
@@ -42,6 +44,7 @@ spec:
     fileserver:
       service:
         type: ClusterIP
+        port: null
       storage:
         data:
           class: "local-path"
