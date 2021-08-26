@@ -19,9 +19,6 @@ spec:
     controller:
       replicaCount: 1
       service:
-        type: NodePort
-        httpPort:
-          nodePort: "30080"
-        httpsPort:
-          nodePort: "30443"
+        type: LoadBalancer
+        loadBalancerIP: 110.25.30.6
       setAsDefaultIngress: true
