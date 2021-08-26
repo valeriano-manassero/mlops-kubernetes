@@ -20,5 +20,5 @@ spec:
       replicaCount: 1
       service:
         type: LoadBalancer
-        loadBalancerIP: 110.25.30.6
+        loadBalancerIP: 10.25.30.6
       setAsDefaultIngress: true
