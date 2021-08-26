@@ -24,15 +24,7 @@ spec:
       hostPrefixApi: "api-"
       hostPrefixFiles: "files-"
     
-    webserver:
-      service:
-        type: ClusterIP
-        port: null
-    
     apiserver:
-      service:
-        type: ClusterIP
-        port: null
       storage:
         logs:
           class: "local-path"
@@ -42,9 +34,6 @@ spec:
           size: 1Gi
 
     fileserver:
-      service:
-        type: ClusterIP
-        port: null
       storage:
         data:
           class: "local-path"
