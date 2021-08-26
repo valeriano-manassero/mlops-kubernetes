@@ -18,7 +18,12 @@ spec:
   values:
     ingress:
       enabled: true
-      name: clearml-server-ingress
+      annotations:
+        nginx.ingress.kubernetes.io/proxy-body-size: "0"
+        nginx.ingress.kubernetes.io/server-snippet: |
+          client_max_body_size 0;
+        nginx.ingress.kubernetes.io/configuration-snippet: |
+          chunked_transfer_encoding off;
       host: "clearml-10-25-30-6.nip.io"
       hostPrefixApp: "app-"
       hostPrefixApi: "api-"
