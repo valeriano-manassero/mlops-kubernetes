@@ -54,9 +54,6 @@ spec:
         agentVersion: ""
         replicaCount: 4
         nvidiaGpusPerAgent: 0
-        clearmlApiHost: "http://api-clearml-10-25-30-6.nip.io"
-        clearmlWebHost: "http://app-clearml-10-25-30-6.nip.io"
-        clearmlFilesHost: "http://files-clearml-10-25-30-6.nip.io"
         clearmlConfig: |-
           sdk {
               aws {
@@ -95,9 +92,6 @@ spec:
         agentVersion: ""
         replicaCount: 1
         nvidiaGpusPerAgent: 1
-        clearmlApiHost: "http://api-clearml-10-25-30-6.nip.io"
-        clearmlWebHost: "http://app-clearml-10-25-30-6.nip.io"
-        clearmlFilesHost: "http://files-clearml-10-25-30-6.nip.io"
         clearmlConfig: |-
           sdk {
               aws {
