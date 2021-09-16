@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: allegroai
         namespace: flux-system
-      version: "2.2.x"
+      version: "3.0.x"
       interval: 1m
   values:
     ingress:
@@ -24,19 +24,27 @@ spec:
           client_max_body_size 0;
         nginx.ingress.kubernetes.io/configuration-snippet: |
           chunked_transfer_encoding off;
-      host: "clearml-10-25-30-6.nip.io"
-      hostPrefixApp: "app-"
-      hostPrefixApi: "api-"
-      hostPrefixFiles: "files-"
+      app:
+        hostName: "app-clearml-10-25-30-6.nip.io"
+        tlsSecretName: ""
+      api:
+        hostName: "api-clearml-10-25-30-6.nip.io"
+        tlsSecretName: ""
+      files:
+        hostName: "files-clearml-10-25-30-6.nip.io"
+        tlsSecretName: ""
     
     apiserver:
-      storage:
-        logs:
-          class: "local-path"
-          size: 10Gi
-        config:
-          class: "local-path"
-          size: 1Gi
+      additionalConfigs:
+        services.conf: |
+          tasks {
+            non_responsive_tasks_watchdog {
+              # In-progress tasks that haven't been updated for at least 'value' seconds will be stopped by the watchdog
+              threshold_sec: 21000
+              # Watchdog will sleep for this number of seconds after each cycle
+              watch_interval_sec: 900
+            }
+          }
 
     fileserver:
       storage:
@@ -55,6 +63,7 @@ spec:
 
     agentGroups:
       - name: agent-group0
+        enabled: true
         queues: "default"
         agentVersion: ""
         replicaCount: 4
@@ -93,6 +102,7 @@ spec:
           tag: "11.4.1-base-ubuntu20.04"
 
       - name: agent-group1
+        enabled: true
         queues: "gpu"
         agentVersion: ""
         replicaCount: 1
