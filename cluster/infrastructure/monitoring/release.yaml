@@ -28,6 +28,10 @@ spec:
       enabled: false
     grafana:
       enabled: true
+      ingress:
+        enabled: true
+        hosts:
+          - "monitoring-10-25-30-6.nip.io"
     prometheus:
       enabled: true
       alertmanager:
