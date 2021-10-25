@@ -24,7 +24,7 @@ variable "repository_visibility" {
 
 variable "flux_version" {
   type    = string
-  default = "v0.15.3"
+  default = "v0.19.1"
 }
 
 variable "branch" {
