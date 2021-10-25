@@ -18,3 +18,7 @@ spec:
   values:
     operator:
       defaultRuntime: containerd
+  install:
+    crds: CreateReplace
+  upgrade:
+    crds: CreateReplace
